@@ -1,0 +1,8 @@
+/build/
+/config/
+/dist/
+/*.js
+/test/unit/coverage/
+/test/e2e/custom-assertions
+/test/e2e/nightwatch.conf.js
+/test/e2e/runner.js

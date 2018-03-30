@@ -5,14 +5,20 @@
       class="input"
       type="text"
       @keyup.enter="submit"
-    />
-    <h3 class="no-ingredients" v-if="!hasIngredients">No Ingredients</h3>
+    >
+    <h3
+      v-if="!hasIngredients"
+      class="no-ingredients"
+    >
+      No Ingredients
+    </h3>
     <ul>
       <li
+        v-for="(ingredient, index) in ingredients"
+        :key="index"
         class="ingredient"
-        v-for="ingredient in ingredients"
       >
-        {{ingredient}}
+        {{ ingredient }}
       </li>
     </ul>
   </div>
@@ -24,22 +30,20 @@ export default {
   data() {
     return {
       ingredients: [],
-    }
+    };
+  },
+  computed: {
+    hasIngredients() {
+      return this.ingredients.length > 0;
+    },
   },
   methods: {
     submit(event) {
       event.preventDefault();
       this.ingredients.push(event.target.value);
-      console.log(event.target.value);
-      console.log(this)
     },
   },
-  computed: {
-    hasIngredients() {
-      return this.ingredients.length > 0
-    },
-  },
-}
+};
 </script>
 
 <style scoped>

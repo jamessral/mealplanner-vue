@@ -13,7 +13,6 @@ module.exports = {
   extends: ['plugin:vue/recommended', 'airbnb-base'],
   // required to lint *.vue files
   plugins: [
-    'html',
     'vue',
   ],
   // check if imports actually resolve

@@ -1,15 +1,14 @@
 <template>
-    <v-app>
-      <v-navigation-drawer app>
-        <nav-bar />
-      </v-navigation-drawer>
-      <v-content>
-        <v-container fluid>
-          <router-view />
-        </v-container>
-      </v-content>
-    </v-app>
-  </div>
+  <v-app>
+    <v-navigation-drawer app>
+      <nav-bar />
+    </v-navigation-drawer>
+    <v-content>
+      <v-container fluid>
+        <router-view />
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
@@ -23,7 +22,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 body {
   height: 100vh;
   margin: 0;

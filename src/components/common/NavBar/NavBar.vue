@@ -13,19 +13,20 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .container {
-  --horizontal-padding: 1em;
-  --vertical-padding: 1.2em;
+  $horizontal-padding: 1em;
+  $vertical-padding: 1.2em;
+
   background-color: #22aa88;
   display: flex;
   flex-direction: column;
   font-size: 1.2em;
   margin: 0;
-  padding-left: var(--horizontal-padding);
-  padding-right: var(--horizontal-padding);
-  padding-top: var(--horizontal-padding);
-  padding-bottom: var(--horizontal-padding);
+  padding-left: $horizontal-padding;
+  padding-right: $horizontal-padding;
+  padding-top: $horizontal-padding;
+  padding-bottom: $horizontal-padding;
   width: 100vw;
 }
 

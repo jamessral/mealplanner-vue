@@ -46,47 +46,48 @@ export default {
 }
 </script>
 
-<style scoped>
-.container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-}
+<style scoped lang="scss">
+  $dark-color: #222222;
+  $light-color: #dddddd;
+  $orange-dark: #fc861e;
+  $orange-light: #f4a158;
 
-.ingredient {
-  --orange-dark: #fc861e;
-  --orange-light: #f4a158;
-  align-items: center;
-  display: flex;
-  background-color: var(--orange-light);
-  border-left: 2px solid var(--orange-dark);
-  width: 18em;
-  margin: 0;
-  padding: 1em;
-  text-align: center;
-}
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
 
-.input {
-  --dark-color: #222222;
-  --light-color: #dddddd;
-  background-color: var(--dark-color);
-  color: var(--light-color);
-  font-size: 1em;
-  height: 4em;
-  width: 20em;
-}
+  .ingredient {
+    align-items: center;
+    display: flex;
+    background-color: $orange-light;
+    border-left: 2px solid $orange-dark;
+    width: 18em;
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+  }
 
-.no-ingredients {
-  align-items: center;
-  display: flex;
-  font-size: 1.4em;
-  height: 100%;
-  justify-content: center;
-  padding: 0;
-  width: 100%;
-}
+  .input {
+    background-color: $dark-color;
+    color: $light-color;
+    font-size: 1em;
+    height: 4em;
+    width: 20em;
+  }
+
+  .no-ingredients {
+    align-items: center;
+    display: flex;
+    font-size: 1.4em;
+    height: 100%;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+  }
 </style>

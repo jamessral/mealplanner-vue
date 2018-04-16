@@ -1,19 +1,26 @@
 <template>
-  <div id="app">
-    <nav-bar />
-    <router-view />
+    <v-app>
+      <v-navigation-drawer app>
+        <nav-bar />
+      </v-navigation-drawer>
+      <v-content>
+        <v-container fluid>
+          <router-view />
+        </v-container>
+      </v-content>
+    </v-app>
   </div>
 </template>
 
 <script>
-import NavBar from '@/components/common/NavBar/NavBar';
+import NavBar from '@/components/common/NavBar/NavBar'
 
 export default {
   name: 'App',
   components: {
     NavBar,
   },
-};
+}
 </script>
 
 <style>

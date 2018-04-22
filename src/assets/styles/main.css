@@ -1,0 +1,10 @@
+@tailwind preflight;
+
+#app {
+  height: 100vh;
+  width: 100vw;
+}
+
+@tailwind components;
+
+@tailwind utilities;

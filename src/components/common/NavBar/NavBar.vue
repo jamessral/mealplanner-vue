@@ -1,9 +1,34 @@
 <template>
-  <nav class="container">
-    <span class="title">MealPlanner</span>
-    <router-link to="/ingredients">Ingredients</router-link>
-    <router-link to="/recipes">Recipes</router-link>
-    <router-link to="/mealplans">MealPlans</router-link>
+  <nav class="flex items-center justify-between flex-wrap bg-teal p-6">
+    <div class="flex items-center flex-no-shrink text-white mr-6">
+      <span class="font-semibold text-xl tracking-tight">MealPlanner</span>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div class="text-sm lg:flex-grow">
+        <router-link
+          class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4"
+          to="/ingredients"
+        >
+          Ingredients
+        </router-link>
+      </div>
+      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <router-link
+          class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4"
+          to="/recipes"
+        >
+          Recipes
+        </router-link>
+      </div>
+      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <router-link
+          class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4"
+          to="/mealplans"
+        >
+          MealPlans
+        </router-link>
+      </div>
+    </div>
   </nav>
 </template>
 
@@ -14,24 +39,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.container {
-  $horizontal-padding: 1em;
-  $vertical-padding: 1.2em;
-
-  background-color: #22aa88;
-  display: flex;
-  flex-direction: column;
-  font-size: 1.2em;
-  margin: 0;
-  padding-left: $horizontal-padding;
-  padding-right: $horizontal-padding;
-  padding-top: $horizontal-padding;
-  padding-bottom: $horizontal-padding;
-  width: 100vw;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
 </style>

@@ -1,11 +1,15 @@
 <template>
-  <div>
+  <div
+    class="container-lg mx-auto bg-grey-lightest"
+    id="app"
+  >
     <nav-bar />
     <router-view />
   </div>
 </template>
 
 <script>
+import '@/assets/styles/main.css'
 import NavBar from '@/components/common/NavBar/NavBar'
 
 export default {
@@ -17,10 +21,4 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-}
 </style>

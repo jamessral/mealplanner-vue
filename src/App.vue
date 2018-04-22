@@ -1,14 +1,8 @@
 <template>
-  <v-app>
-    <v-navigation-drawer app>
-      <nav-bar />
-    </v-navigation-drawer>
-    <v-content>
-      <v-container fluid>
-        <router-view />
-      </v-container>
-    </v-content>
-  </v-app>
+  <div>
+    <nav-bar />
+    <router-view />
+  </div>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
   <div
-    class="container-lg mx-auto bg-grey-lightest"
     id="app"
+    class="container-lg mx-auto bg-grey-lightest"
   >
     <nav-bar />
     <router-view />
@@ -21,4 +21,5 @@ export default {
 </script>
 
 <style lang="scss">
+
 </style>

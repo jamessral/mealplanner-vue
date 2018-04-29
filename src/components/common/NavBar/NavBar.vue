@@ -1,12 +1,12 @@
 <template>
   <nav class="flex items-center justify-between flex-wrap bg-teal p-6">
-    <div class="flex items-center flex-no-shrink text-white mr-6">
+    <div class="flex flex-1 items-center flex-no-shrink text-white mr-6 pr-8">
       <span class="font-semibold text-xl tracking-tight">MealPlanner</span>
     </div>
-    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-      <div class="text-sm lg:flex-grow">
+    <div class="flex flex-1 items- justify-center p-0 mr-0">
+      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <router-link
-          class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4"
+          class="block lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4"
           to="/ingredients"
         >
           Ingredients
@@ -14,7 +14,7 @@
       </div>
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <router-link
-          class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4"
+          class="block lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4"
           to="/recipes"
         >
           Recipes
@@ -22,7 +22,7 @@
       </div>
       <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <router-link
-          class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4"
+          class="block lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4"
           to="/mealplans"
         >
           MealPlans
@@ -38,5 +38,8 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+a {
+  text-decoration: none;
+}
 </style>

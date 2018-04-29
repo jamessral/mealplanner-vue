@@ -1,14 +1,13 @@
 <template id="ingredients-root">
-  <div class="container">
-    <h3>Ingredients</h3>
-    <input
-      class="input"
-      type="text"
-      @keyup.enter="submit"
-    >
+  <div class="container mx-auto">
+    <h3 class="mx-auto pt-6 pb-6">Ingredients</h3>
+    <ingredients-form
+      :ingredients="ingredients"
+      :on-submit="handleFormSubmit"
+    />
     <h3
       v-if="!hasIngredients"
-      class="no-ingredients"
+      class="mx-auto pt-6 pb-6"
     >
       No Ingredients
     </h3>
@@ -25,8 +24,13 @@
 </template>
 
 <script>
+import IngredientsForm from './IngredientsForm'
+
 export default {
   name: 'IngredientsRoot',
+  components: {
+    IngredientsForm,
+  },
   data() {
     return {
       ingredients: [],
@@ -38,56 +42,13 @@ export default {
     },
   },
   methods: {
-    submit(event) {
-      event.preventDefault()
-      this.ingredients.push(event.target.value)
+    handleFormSubmit(ingredient) {
+      this.ingredients.push(ingredient)
     },
   },
 }
 </script>
 
 <style scoped lang="scss">
-  $dark-color: #222222;
-  $light-color: #dddddd;
-  $orange-dark: #fc861e;
-  $orange-light: #f4a158;
 
-  .container {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-  }
-
-  .ingredient {
-    align-items: center;
-    display: flex;
-    background-color: $orange-light;
-    border-left: 2px solid $orange-dark;
-    width: 18em;
-    margin: 0;
-    padding: 1em;
-    text-align: center;
-  }
-
-  .input {
-    background-color: $dark-color;
-    color: $light-color;
-    font-size: 1em;
-    height: 4em;
-    width: 20em;
-  }
-
-  .no-ingredients {
-    align-items: center;
-    display: flex;
-    font-size: 1.4em;
-    height: 100%;
-    justify-content: center;
-    padding: 0;
-    width: 100%;
-  }
 </style>

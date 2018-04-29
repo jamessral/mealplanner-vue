@@ -1,14 +1,12 @@
-import Vue from 'vue'
+import { shallow } from '@vue/test-utils'
 import NavBar from '@/components/common/NavBar/NavBar'
-
-const factory = () => new Vue(NavBar).$mount()
 
 describe('NavBar.vue', () => {
   it('should render correct contents', () => {
-    const wrapper = factory()
+    const wrapper = shallow(NavBar, {
+      stubs: ['router-link'],
+    })
 
-    // This test is too invasive. Just using it as a proof
-    // of concept
-    expect(wrapper.$el.children[0].innerHTML).toEqual('MealPlanner')
+    expect(wrapper.find('span').text()).toEqual('MealPlanner')
   })
 })

@@ -1,5 +1,6 @@
 <template id="ingredients-root">
   <div class="container mx-auto">
+    <h3 v-if="loadError">{{ loadError.toString() }}</h3>
     <h3 class="mx-auto pt-6 pb-6">Ingredients</h3>
     <ingredients-form
       :ingredients="ingredients"
@@ -12,27 +13,31 @@
       No Ingredients
     </h3>
     <ul>
-      <li
-        v-for="(ingredient, index) in ingredients"
-        :key="index"
-        class="ingredient"
-      >
-        {{ ingredient }}
-      </li>
+      <ingredient-item
+        v-for="item in ingredients"
+        :key="item.id"
+        :name="item.name"
+        :description="item.description"
+        :price="item.price"
+      />
     </ul>
   </div>
 </template>
 
 <script>
+import axios from '@/axios'
 import IngredientsForm from './IngredientsForm'
+import IngredientItem from './IngredientItem'
 
 export default {
   name: 'IngredientsRoot',
   components: {
     IngredientsForm,
+    IngredientItem,
   },
   data() {
     return {
+      loadError: null,
       ingredients: [],
     }
   },
@@ -40,6 +45,12 @@ export default {
     hasIngredients() {
       return this.ingredients.length > 0
     },
+  },
+  created() {
+    axios
+      .get('./ingredients')
+      .then(res => this.ingredients = res.data)
+      .catch(err => this.loadError = err)
   },
   methods: {
     handleFormSubmit(ingredient) {

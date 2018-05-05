@@ -3,67 +3,75 @@
 module.exports = {
   root: true,
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: "babel-eslint"
   },
   env: {
     browser: true
   },
   // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
   // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-  extends: ['plugin:vue/recommended', 'airbnb-base'],
+  extends: ["plugin:vue/recommended", "airbnb-base"],
   // required to lint *.vue files
-  plugins: [
-    'vue',
-  ],
+  plugins: ["vue", "prettier"],
   // check if imports actually resolve
   settings: {
-    'import/resolver': {
+    "import/resolver": {
       webpack: {
-        config: 'build/webpack.base.conf.js'
+        config: "build/webpack.base.conf.js"
       }
     }
   },
   // add your custom rules here
   rules: {
     // don't require .vue extension when importing
-    'import/extensions': ['error', 'always', {
-      js: 'never',
-      vue: 'never'
-    }],
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        js: "never",
+        vue: "never"
+      }
+    ],
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions
-    'no-param-reassign': ['error', {
-      props: true,
-      ignorePropertyModificationsFor: [
-        'state', // for vuex state
-        'acc', // for reduce accumulators
-        'e' // for e.returnvalue
-      ]
-    }],
-    // allow optionalDependencies
-    'import/no-extraneous-dependencies': ['error', {
-      optionalDependencies: ['test/unit/index.js']
-    }],
-    // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'semi': ['error', 'never'],
-    'prefer-const': [
-      'error',
+    "no-param-reassign": [
+      "error",
       {
-        "destructuring": "any",
-        "ignoreReadBeforeAssign": false,
-      },
-    ],
-    'no-var': 'error',
-    'comma-dangle': [
-      'error',
-      {
-        'arrays': 'always-multiline',
-        'objects': 'always-multiline',
-        'imports': 'always-multiline',
-        'exports': 'always-multiline',
-        'functions': 'ignore',
+        props: true,
+        ignorePropertyModificationsFor: [
+          "state", // for vuex state
+          "acc", // for reduce accumulators
+          "e" // for e.returnvalue
+        ]
       }
-    ]
+    ],
+    // allow optionalDependencies
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        optionalDependencies: ["test/unit/index.js"]
+      }
+    ],
+    // allow debugger during development
+    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+    "prefer-const": [
+      "error",
+      {
+        destructuring: "any",
+        ignoreReadBeforeAssign: false
+      }
+    ],
+    "no-var": "error",
+    "comma-dangle": [
+      "error",
+      {
+        arrays: "always-multiline",
+        objects: "always-multiline",
+        imports: "always-multiline",
+        exports: "always-multiline",
+        functions: "ignore"
+      }
+    ],
+    "prettier/prettier": "error"
   }
-}
+};
